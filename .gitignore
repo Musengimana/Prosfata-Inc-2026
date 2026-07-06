@@ -1,0 +1,16 @@
+# Internal working documents, not part of the published site
+site-structure-and-page-copy.md
+screenshots/
+.claude/
+
+# Original source assets (optimized copies live in /assets)
+Hero Home Image.jpg
+Prosfata Inc Blue Background Logo Icon.svg
+Prosfata Inc Blue Background Logo.webp
+Prosfata Inc. Primary Icon_no background (1).png
+Prosfata Inc. Primary Logo_no background (2).png
+Prosfata Inc. Secondary Logo_no background (3).png
+
+# OS noise
+Thumbs.db
+desktop.ini
