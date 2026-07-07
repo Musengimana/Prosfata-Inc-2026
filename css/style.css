@@ -661,37 +661,246 @@ body.nav-open {
   color: var(--ink);
 }
 
-/* ProD Consulting OS landing */
+/* --------------------------------------------------------------------------
+   ProD Consulting OS page (implemented from the Prosfata Design System
+   project, ui_kits/website/prod-consulting.html). ProD palette is local to
+   this page: a bridge to the ProD brand, not part of the Prosfata token set.
+   -------------------------------------------------------------------------- */
 
-.prod-logo {
+.prodx-hero,
+.prodx-process,
+.prodx-bridge {
+  --prod-forest: #0E2419;
+  --prod-forest-soft: #163324;
+  --prod-mint: #6EC99F;
+  --prod-mint-soft: rgba(110, 201, 159, 0.14);
+  --prod-paper: #F2F4F2;
+  --prod-navy: #0E234F;
+  --prod-body: #35455E;
+  --prod-muted: #7C8798;
+  --prod-hairline: rgba(14, 35, 79, 0.12);
+}
+
+.prodx-logo {
   display: flex;
   align-items: center;
-  gap: 0.9rem;
-  margin-bottom: 2.5rem;
+  gap: 10px;
+  margin: 0 0 3rem;
 }
 
-.prod-chip {
-  width: clamp(44px, 4vw, 64px);
-  height: clamp(44px, 4vw, 64px);
+.prodx-logo--center {
+  justify-content: center;
+  margin-bottom: 1.4rem;
+}
+
+.prodx-chip {
+  width: 22px;
+  height: 22px;
   flex: none;
-  border-radius: 22%;
-  box-shadow: 0 0 40px rgba(125, 208, 182, 0.25);
+  border-radius: 7px;
+  background: var(--prod-mint);
 }
 
-.prod-wordmark {
+.prodx-wordmark {
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: clamp(1.3rem, 1rem + 1.2vw, 2.2rem);
-  color: #7DD0B6; /* ProD mint, echoed from prorgdesign.com */
-  letter-spacing: 0.01em;
+  font-size: 1.3rem;
+  color: var(--white);
+  letter-spacing: -0.01em;
+  white-space: nowrap;
 }
 
-.prod-hero .proof-grid {
-  margin: 3rem 0 2.5rem;
+.prodx-tm {
+  font-size: 0.5em;
+  font-weight: 400;
 }
 
-.prod-ctas {
-  margin-top: 0;
+.prodx-kicker {
+  font-family: var(--font-display);
+  font-size: var(--fs-small);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--prod-mint);
+  margin: 0 0 1.1rem;
+}
+
+.prodx-kicker--forest {
+  color: var(--prod-forest);
+}
+
+/* Hero */
+
+.prodx-hero {
+  background: var(--prod-forest);
+  padding-block: clamp(4rem, 9vh, 6rem);
+}
+
+.prodx-hero h1 {
+  margin: 0;
+  font-size: clamp(2rem, 1.3rem + 2.4vw, 4rem);
+  line-height: 1.08;
+  color: var(--prod-paper);
+}
+
+.prodx-sub {
+  margin: 1.5rem 0 0;
+  font-size: clamp(1.05rem, 1rem + 0.35vw, 1.35rem);
+  line-height: 1.55;
+  font-weight: 500;
+  color: var(--prod-mint);
+}
+
+.prodx-ctas {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 2.5rem;
+}
+
+.prodx-ctas--center {
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.prodx-btn-mint {
+  background: var(--prod-mint);
+  color: var(--prod-forest);
+  border: 1px solid var(--prod-mint);
+}
+
+.prodx-btn-mint:hover {
+  background: var(--prod-paper);
+  border-color: var(--prod-paper);
+  color: var(--prod-forest);
+  transform: translateY(-2px);
+}
+
+.prodx-btn-ghost {
+  background: transparent;
+  color: var(--prod-paper);
+  border: 2px solid var(--prod-mint);
+}
+
+.prodx-btn-ghost:hover {
+  background: var(--prod-mint-soft);
+  color: var(--prod-paper);
+  transform: translateY(-2px);
+}
+
+/* The Value Creation Process */
+
+.prodx-process {
+  background: #FFFFFF;
+  padding-block: clamp(4rem, 8vh, 5.5rem);
+}
+
+.prodx-process h2 {
+  margin: 0 0 1rem;
+  font-size: clamp(1.6rem, 1.3rem + 1.2vw, 2.6rem);
+  line-height: 1.25;
+  color: var(--prod-navy);
+}
+
+.prodx-phase {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: clamp(1.5rem, 3vw, 3rem);
+  padding-block: clamp(2.5rem, 5vh, 3.5rem);
+  border-bottom: 1px solid var(--prod-hairline);
+}
+
+.prodx-phase:last-of-type {
+  border-bottom: none;
+  padding-bottom: 1rem;
+}
+
+.prodx-phase-n {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 2.2rem + 2vw, 4rem);
+  font-weight: 600;
+  line-height: 1;
+  color: var(--prod-mint);
+}
+
+.prodx-phase-name {
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 1.15rem + 0.6vw, 1.75rem);
+  font-weight: 600;
+  color: var(--prod-forest);
+  margin-top: 0.6rem;
+}
+
+.prodx-badge {
+  display: inline-block;
+  margin-top: 0.8rem;
+  padding: 0.35em 0.9em;
+  border-radius: 999px;
+  background: var(--prod-mint-soft);
+  color: var(--prod-forest);
+  font-family: var(--font-display);
+  font-size: var(--fs-small);
+  font-weight: 500;
+}
+
+.prodx-phase-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.prodx-row {
+  display: grid;
+  grid-template-columns: 170px 1fr;
+  gap: 1.25rem;
+}
+
+.prodx-row-label {
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--prod-muted);
+  padding-top: 3px;
+}
+
+.prodx-row p {
+  margin: 0;
+  font-size: var(--fs-body);
+  line-height: 1.55;
+  color: var(--prod-body);
+}
+
+/* Bridge CTA */
+
+.prodx-bridge {
+  background: var(--prod-forest-soft);
+  padding-block: clamp(4rem, 8vh, 5.5rem);
+  text-align: center;
+}
+
+.prodx-bridge h2 {
+  margin: 0;
+  font-size: clamp(1.6rem, 1.3rem + 1.2vw, 2.6rem);
+  line-height: 1.25;
+  color: var(--prod-paper);
+}
+
+.prodx-bridge .prodx-sub {
+  margin-top: 1rem;
+}
+
+@media (max-width: 900px) {
+  .prodx-phase {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .prodx-row {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+  }
 }
 
 /* Contact */
