@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Prosfata Community Initiative | Prosfata Inc.</title>
-  <meta name="description" content="The Prosfata Community Initiative, BizSkills For Good, partners with leading AI research labs to put frontier tools safely in the hands of underresourced entrepreneurs and communities.">
+  <title>Inclusivitium&reg; | Prosfata Inc.</title>
+  <meta name="description" content="Inclusivitium&reg;, a flagship social impact initiative of BizSkills For Good Inc., democratizes access to elite computing resources for underfunded, high-potential youth.">
 
   <link rel="canonical" href="https://prosfata.com/community.html">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Prosfata Inc.">
-  <meta property="og:title" content="Prosfata Community Initiative | Prosfata Inc.">
-  <meta property="og:description" content="Access changes everything. So we build access.">
+  <meta property="og:title" content="Inclusivitium&reg; | Prosfata Inc.">
+  <meta property="og:description" content="The 21st century will not be defined by who builds the world's most advanced technology, but by who gets to use it.">
   <meta property="og:url" content="https://prosfata.com/community.html">
   <meta property="og:image" content="https://prosfata.com/assets/og-image.png">
   <meta property="og:image:width" content="1200">
@@ -21,115 +21,523 @@
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 
-  <link rel="preload" href="assets/fonts/space-grotesk-latin-500-600.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="assets/fonts/public-sans-latin-400-500.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap">
 
-  <link rel="stylesheet" href="css/style.css">
+  <style>
+    :root {
+      --blue-primary: #0000FF;
+      --base-mist: #DBE0E8;
+      --navy-deep: #0E234F;
+      --blue-600: #0000D6;
+      --blue-700: #0000A8;
+      --neutral-50: #F2F4F8;
+      --neutral-100: #DBE0E8;
+      --neutral-400: #76879B;
+      --text-body: #35455E;
+      --text-muted: var(--neutral-400);
+      --text-link: var(--blue-primary);
+      --accent-primary: var(--blue-primary);
+      --border-subtle: var(--neutral-100);
+      --purple-deep: #4D148C;
+      --orange-spark: #FF6200;
+      --font-sans: 'Helvetica Neue', 'Instrument Sans', Helvetica, Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: #FFFFFF; }
+    body {
+      min-width: 320px;
+      font-family: var(--font-sans);
+      color: var(--text-body);
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--text-link); text-decoration: none; }
+    a:hover { color: var(--blue-600); text-decoration: underline; }
+
+    .btn {
+      font-family: var(--font-sans);
+      font-weight: 500;
+      border: none;
+      border-radius: 999px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: background-color 150ms ease-out, color 150ms ease-out, border-color 150ms ease-out;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .btn:hover { text-decoration: none; }
+    .btn--sm { font-size: 14px; padding: 8px 18px; min-height: 36px; }
+    .btn--lg { font-size: 18px; padding: 14px 32px; min-height: 52px; }
+    .btn--primary { background: var(--blue-primary); color: #FFFFFF; }
+    .btn--primary:hover { background: var(--blue-600); color: #FFFFFF; }
+    .btn--primary:active { background: var(--blue-700); }
+    .btn--orange { background: var(--orange-spark); color: #FFFFFF; }
+    .btn--orange:hover { background: var(--orange-spark); color: #FFFFFF; }
+    .btn--inverse { background: #FFFFFF; color: var(--blue-primary); }
+    .btn--inverse:hover { background: var(--neutral-50); color: var(--blue-primary); }
+    .btn--inverse:active { background: var(--neutral-100); }
+
+    .site-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 20px 48px;
+      border-bottom: 1px solid var(--border-subtle);
+      background: #FFFFFF;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+    .brand-lockup { display: flex; align-items: baseline; gap: 2px; }
+    .brand-lockup:hover { text-decoration: none; }
+    .brand-name { font-size: 22px; font-weight: 700; color: var(--purple-deep); letter-spacing: -0.01em; }
+    .brand-reg { font-size: 12px; font-weight: 700; color: var(--orange-spark); position: relative; top: -8px; }
+    .nav-links { display: flex; align-items: center; gap: 28px; font-size: 14px; font-weight: 500; }
+    .nav-links > a:not(.btn) { color: var(--text-body); }
+
+    .hero {
+      background: var(--purple-deep);
+      color: #FFFFFF;
+      padding: 112px 48px 120px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .kicker {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+    .hero .kicker { color: var(--orange-spark); margin-bottom: 28px; }
+    .hero h1 {
+      margin: 0;
+      max-width: 1040px;
+      font-size: clamp(38px, 5vw, 64px);
+      line-height: 1.1;
+      font-weight: 700;
+      color: #FFFFFF;
+      text-wrap: balance;
+    }
+    .hero-sub {
+      margin: 32px 0 0;
+      max-width: 760px;
+      font-size: 19px;
+      line-height: 1.55;
+      font-weight: 300;
+      color: var(--base-mist);
+      text-wrap: pretty;
+    }
+    .hero-ctas { display: flex; gap: 16px; margin-top: 44px; flex-wrap: wrap; justify-content: center; }
+
+    .manifesto {
+      padding: 112px 48px;
+      background: #FFFFFF;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .manifesto .kicker { color: var(--accent-primary); margin-bottom: 32px; }
+    .manifesto blockquote {
+      margin: 0;
+      max-width: 900px;
+      text-align: center;
+      font-size: clamp(24px, 3vw, 34px);
+      line-height: 1.3;
+      font-weight: 300;
+      color: var(--navy-deep);
+    }
+    .manifesto blockquote em { font-style: normal; color: var(--accent-primary); font-weight: 700; }
+    .manifesto-rule { width: 56px; height: 4px; background: var(--orange-spark); margin: 48px 0; }
+    .manifesto-body {
+      max-width: 720px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      font-size: 17px;
+      line-height: 1.55;
+      color: var(--text-body);
+    }
+    .manifesto-body p { margin: 0; }
+
+    .compass { padding: 96px 48px; background: var(--neutral-50); }
+    .compass-inner { max-width: 1120px; margin: 0 auto; }
+    .compass .kicker { text-align: center; color: var(--accent-primary); margin-bottom: 48px; }
+    .compass-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 24px; }
+    .compass-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      border-radius: 20px;
+      padding: 44px 40px;
+      box-shadow: 0 2px 12px rgba(14, 35, 79, 0.06);
+    }
+    .compass-card--brand {
+      background: var(--blue-primary);
+      border: none;
+      box-shadow: 0 2px 12px rgba(14, 35, 79, 0.10);
+    }
+    .card-label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--neutral-400);
+      margin-bottom: 16px;
+    }
+    .compass-card--brand .card-label { color: var(--orange-spark); }
+    .compass-card p {
+      margin: 0;
+      font-size: 19px;
+      line-height: 1.5;
+      color: var(--navy-deep);
+      font-weight: 500;
+      text-wrap: pretty;
+    }
+    .compass-card--brand p { color: #FFFFFF; }
+
+    .five-ps { padding: 112px 48px; background: #FFFFFF; }
+    .five-ps-inner { max-width: 1120px; margin: 0 auto; }
+    .five-ps .kicker { text-align: center; color: var(--accent-primary); margin-bottom: 20px; }
+    .five-ps h2 {
+      margin: 0 auto;
+      max-width: 720px;
+      text-align: center;
+      font-size: 36px;
+      line-height: 1.25;
+      font-weight: 700;
+      color: var(--navy-deep);
+    }
+    .five-ps-intro {
+      margin: 20px auto 56px;
+      max-width: 760px;
+      text-align: center;
+      font-size: 17px;
+      line-height: 1.55;
+      color: var(--text-body);
+      text-wrap: pretty;
+    }
+    .five-ps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+    .p-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      padding: 32px 28px;
+      box-shadow: 0 2px 10px rgba(14, 35, 79, 0.05);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .p-card-head { display: flex; align-items: center; gap: 14px; }
+    .p-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: var(--blue-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: none;
+      color: #FFFFFF;
+    }
+    .p-icon svg { width: 24px; height: 24px; }
+    .p-num {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--neutral-400);
+    }
+    .p-title { font-size: 19px; font-weight: 700; color: var(--navy-deep); }
+    .p-card > p { margin: 0; font-size: 15px; line-height: 1.55; color: var(--text-body); text-wrap: pretty; }
+
+    .horizon { padding: 112px 48px; background: var(--purple-deep); color: #FFFFFF; }
+    .horizon-inner { max-width: 1120px; margin: 0 auto; }
+    .horizon .kicker { text-align: center; color: var(--orange-spark); margin-bottom: 20px; }
+    .horizon h2 {
+      margin: 0 auto;
+      text-align: center;
+      font-size: 36px;
+      line-height: 1.25;
+      font-weight: 700;
+      color: #FFFFFF;
+    }
+    .horizon-intro {
+      margin: 20px auto 56px;
+      max-width: 680px;
+      text-align: center;
+      font-size: 17px;
+      line-height: 1.55;
+      font-weight: 300;
+      color: var(--base-mist);
+      text-wrap: pretty;
+    }
+    .horizon-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+    .objective-card {
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      border-radius: 16px;
+      padding: 36px 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .objective-stat { font-size: 34px; font-weight: 700; line-height: 1.1; color: var(--orange-spark); }
+    .objective-title { font-size: 16px; font-weight: 700; color: #FFFFFF; }
+    .objective-card p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.55;
+      font-weight: 300;
+      color: var(--base-mist);
+      text-wrap: pretty;
+    }
+
+    .partner-cta { padding: 96px 48px; background: var(--blue-primary); text-align: center; }
+    .partner-cta h2 {
+      margin: 0 auto;
+      max-width: 720px;
+      font-size: 34px;
+      line-height: 1.25;
+      font-weight: 700;
+      color: #FFFFFF;
+      text-wrap: balance;
+    }
+    .partner-cta-actions { display: flex; gap: 16px; justify-content: center; margin-top: 36px; flex-wrap: wrap; }
+
+    .site-footer {
+      background: #FFFFFF;
+      border-top: 1px solid var(--border-subtle);
+      padding: 64px 48px 48px;
+    }
+    .footer-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+    .footer-brand { display: flex; align-items: center; gap: 20px; }
+    .footer-brand img { width: 84px; height: 84px; }
+    .footer-brand-name { font-size: 16px; font-weight: 700; color: var(--navy-deep); }
+    .footer-brand-name .brand-reg-sm { font-size: 10px; position: relative; top: -5px; }
+    .footer-brand-tag { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
+    .footer-note { max-width: 460px; display: flex; flex-direction: column; gap: 12px; }
+    .footer-note-label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--neutral-400);
+    }
+    .footer-note p { margin: 0; font-size: 13px; line-height: 1.55; color: var(--text-body); }
+    .footer-note p.muted { color: var(--text-muted); }
+
+    @media (max-width: 860px) {
+      .nav-links > a:not(.btn) { display: none; }
+    }
+    @media (max-width: 720px) {
+      .site-nav { padding: 16px 24px; }
+      .hero { padding: 80px 24px 88px; }
+      .manifesto, .five-ps, .horizon { padding: 80px 24px; }
+      .compass, .partner-cta { padding: 72px 24px; }
+      .site-footer { padding: 48px 24px 40px; }
+      .compass-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
 
-  <header class="site-header">
-    <div class="container">
-      <a class="brand" href="index.html" aria-label="Prosfata Inc. home">
-        <img src="assets/prosfata-logo-white.png" alt="Prosfata Inc." width="400" height="225">
-      </a>
-      <nav class="nav-desktop" aria-label="Primary">
-        <a class="nav-link" href="prod-consulting-os.html">ProD Consulting OS&trade;</a>
-        <a class="nav-link" href="community.html" aria-current="page">Community</a>
-        <a class="btn btn--primary nav-cta" href="contact.html">Contact</a>
-      </nav>
-      <button class="nav-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
-        <span class="nav-toggle-bar"></span>
-        <span class="nav-toggle-bar"></span>
-        <span class="nav-toggle-bar"></span>
-      </button>
-    </div>
+  <header class="site-nav">
+    <a class="brand-lockup" href="index.html" aria-label="Prosfata Inc. home">
+      <span class="brand-name">Inclusivitium</span>
+      <span class="brand-reg">&reg;</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#manifesto">Manifesto</a>
+      <a href="#compass">Vision &amp; Mission</a>
+      <a href="#five-ps">The 5 Ps</a>
+      <a href="#horizon">Horizon 2035</a>
+      <a class="btn btn--sm btn--primary" href="#partner">Partner With Us</a>
+    </nav>
   </header>
-
-  <nav class="nav-mobile" id="mobile-menu" aria-label="Mobile">
-    <ul>
-      <li><a class="nav-link" href="prod-consulting-os.html">ProD Consulting OS&trade;</a></li>
-      <li><a class="nav-link" href="community.html" aria-current="page">Community</a></li>
-      <li><a class="btn btn--primary nav-cta" href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
 
   <main>
 
-    <section class="page-hero" aria-labelledby="community-title">
-      <img class="page-mark" src="assets/pro-mark.svg" alt="" aria-hidden="true" loading="lazy">
-      <div class="container">
-        <p class="kicker">BizSkills For Good</p>
-        <h1 id="community-title">Access changes everything. So we build access<span class="echo">.</span></h1>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="kicker">The Uncompromising Truth</div>
+      <h1 id="hero-title">The 21st century will not be defined by who builds the world's most advanced technology, but by who gets to use it.</h1>
+      <p class="hero-sub">Education changed the 20th century for good. The 21st century will be shaped by how the world's most productive minds and future leaders secure equitable, fair, and structural access to emerging technology. Tech access changes lives. We are building that bridge.</p>
+      <div class="hero-ctas">
+        <a class="btn btn--lg btn--orange" href="#partner">Partner With the Initiative</a>
+        <a class="btn btn--lg btn--inverse" href="#five-ps">Explore the Platform</a>
       </div>
     </section>
 
-    <div class="content-blocks">
-      <section class="block" aria-labelledby="vision-h">
-        <div class="container">
-          <h2 id="vision-h">Our vision</h2>
-          <p>A world where the most powerful tools of an era are not reserved for the people who already have everything. Artificial intelligence is that tool now. We intend to put it, safely, in the hands of communities that would never have had that access.</p>
-        </div>
-      </section>
+    <section id="manifesto" class="manifesto" aria-labelledby="manifesto-label">
+      <div class="kicker" id="manifesto-label">The Inclusivitium&reg; Imperative</div>
+      <blockquote>"Talent is universally distributed. Infrastructure is not. When we gate the tools of the agentic AI revolution behind premium credit cards and high-bandwidth networks, we don't just create a digital divide&mdash;we <em>freeze human potential</em>."</blockquote>
+      <div class="manifesto-rule" aria-hidden="true"></div>
+      <div class="manifesto-body">
+        <p>Inclusivitium&reg; is a high-performance technology platform that democratizes access to elite computing resources. Through strategic partnerships with global, leading AI Research Labs, we capture, mask, optimize, and route premium token allocations directly into the hands of underfunded, high-potential youth.</p>
+        <p>We don't give handouts; we provision digital sovereignty. Inclusivitium&reg; is built specifically to turn tomorrow's leaders from passive consumers of technology into the architects of localized, community-driven software solutions.</p>
+      </div>
+    </section>
 
-      <section class="block" aria-labelledby="origin-h">
-        <div class="container">
-          <h2 id="origin-h">Where we come from</h2>
-          <p>BizSkills For Good began with underresourced entrepreneurs and communities: practical business skills, coaching founders from idea to company, and supporting ownership through entrepreneurship by acquisition. That work taught us one lesson we have never let go of: talent is everywhere, access is not.</p>
+    <section id="compass" class="compass" aria-labelledby="compass-label">
+      <div class="compass-inner">
+        <div class="kicker" id="compass-label">Our Core Compass</div>
+        <div class="compass-grid">
+          <div class="compass-card">
+            <div class="card-label">Aspirational Vision</div>
+            <p>To establish the unassailable global pipeline for technology equity&mdash;a world where a brilliant mind on a lagging smartphone in an underfunded community has the exact same computing power, engineering autonomy, and agentic capability as a developer in a Silicon Valley lab.</p>
+          </div>
+          <div class="compass-card compass-card--brand">
+            <div class="card-label">Powerful Mission</div>
+            <p>To orchestrate a frictionless, secure, and self-sustaining middleware ecosystem that translates corporate compute donations into verified, real-world community assets, empowering the next generation of builders to solve localized friction points through autonomous software engineering.</p>
+          </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="block" aria-labelledby="partnership-h">
-        <div class="container">
-          <h2 id="partnership-h">Our partnership strategy</h2>
-          <p>We partner with globally leading AI research labs to close that gap. The exchange is simple and honest. Labs bring frontier tools and safety expertise. We bring trusted community relationships, on-the-ground delivery, and the lived context that keeps AI adoption people-centred rather than extractive. Together we turn research access into real capability: training, deployment support, and feedback that flows back to the labs from communities they would otherwise never hear from.</p>
+    <section id="five-ps" class="five-ps" aria-labelledby="five-ps-title">
+      <div class="five-ps-inner">
+        <div class="kicker">The Sustainability Architecture</div>
+        <h2 id="five-ps-title">The 5 Ps</h2>
+        <p class="five-ps-intro">Inclusivitium&reg; is designed from the ground up as a sustainable social enterprise business model. Our operational mechanics align directly with the United Nations' 5 Ps of Sustainability to create an ecosystem where social impact and enterprise engineering reinforce each other.</p>
+        <div class="five-ps-grid">
+
+          <div class="p-card">
+            <div class="p-card-head">
+              <div class="p-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><path d="M16 3.128a4 4 0 0 1 0 7.744"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><circle cx="9" cy="7" r="4"/></svg>
+              </div>
+              <div>
+                <div class="p-num">01</div>
+                <div class="p-title">People (Human Equity)</div>
+              </div>
+            </div>
+            <p>We invest directly in the world's most productive future leaders. By bypassing the physical and financial bottlenecks of the digital divide, we provide youth with industry-grade engineering environments. This shifts the economic trajectory of entire families and communities.</p>
+          </div>
+
+          <div class="p-card">
+            <div class="p-card-head">
+              <div class="p-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
+              </div>
+              <div>
+                <div class="p-num">02</div>
+                <div class="p-title">Planet (Efficient Compute)</div>
+              </div>
+            </div>
+            <p>Unchecked AI processing drains global energy grids. Inclusivitium&reg; implements Semantic Prompt Caching and local-first browser architectures via WebGPU. By catching repetitive training tasks at the edge, we reduce raw cloud server load by up to 40%, ensuring that our educational expansion does not come at the cost of our planet's climate thresholds.</p>
+          </div>
+
+          <div class="p-card">
+            <div class="p-card-head">
+              <div class="p-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 7h6v6"/><path d="m22 7-8.5 8.5-5-5L2 17"/></svg>
+              </div>
+              <div>
+                <div class="p-num">03</div>
+                <div class="p-title">Prosperity (Economic Mobility)</div>
+              </div>
+            </div>
+            <p>True prosperity begins when communities build their own solutions. When a student uses our platform to design a live local app, they aren't just learning to code&mdash;they are building structural efficiency for local supply chains, pantries, and small businesses. We turn compute tokens into neighborhood economic multipliers.</p>
+          </div>
+
+          <div class="p-card">
+            <div class="p-card-head">
+              <div class="p-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+              </div>
+              <div>
+                <div class="p-num">04</div>
+                <div class="p-title">Peace (Ethical Integrity)</div>
+              </div>
+            </div>
+            <p>Technology without guardrails breeds exploitation. Inclusivitium&reg; incorporates real-time inline safety proxies running Llama Guard and Google Checks. By instilling deep accountability and ethical compliance metrics within our sandboxed runtimes, we cultivate a generation of leaders who build safe, peaceful, and bias-mitigated applications.</p>
+          </div>
+
+          <div class="p-card">
+            <div class="p-card-head">
+              <div class="p-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-2"/><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/><path d="M3 4h8"/></svg>
+              </div>
+              <div>
+                <div class="p-num">05</div>
+                <div class="p-title">Partnership (The Collaboration Bridge)</div>
+              </div>
+            </div>
+            <p>We bridge the gap between global enterprise and local communities. Our Zero-Integration Ingestion Engine allows leading AI Research Labs to seamlessly deploy philanthropic token allocations without internal engineering friction. We handle the compliance, the ledgering, and the auditing, turning corporate social responsibility into verified value chain impacts.</p>
+          </div>
+
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="block" aria-labelledby="support-h">
-        <div class="container">
-          <h2 id="support-h">Who we support</h2>
-          <p>Underresourced entrepreneurs and the organizations that serve them. Newcomer and underrepresented founders. Community organizations doing essential work without technical capacity. Small businesses in overlooked places. If access would change their trajectory, they are who this is for.</p>
+    <section id="horizon" class="horizon" aria-labelledby="horizon-title">
+      <div class="horizon-inner">
+        <div class="kicker">Strategic Objectives</div>
+        <h2 id="horizon-title">Horizon 2035</h2>
+        <p class="horizon-intro">We do not measure our success in vague sentiment; we measure it in audited, structural milestones. By 2035, the Inclusivitium&reg; platform will achieve:</p>
+        <div class="horizon-grid">
+          <div class="objective-card">
+            <div class="objective-stat">1,000,000</div>
+            <div class="objective-title">Verified Builders</div>
+            <p>Onboard and graduate one million underrepresented teenagers through our advanced multi-tab IDE runtimes into verified university or high-paying career tracks.</p>
+          </div>
+          <div class="objective-card">
+            <div class="objective-stat">10 Trillion</div>
+            <div class="objective-title">Optimized Tokens Deployed</div>
+            <p>Securely route and process ten trillion philanthropic compute tokens, maintaining a global token-to-education efficiency rate of greater than 95%.</p>
+          </div>
+          <div class="objective-card">
+            <div class="objective-stat">100,000</div>
+            <div class="objective-title">Live Community Applications</div>
+            <p>Power one hundred thousand autonomous, student-built apps actively running in localized ecosystems, completely funded through decentralized, sustainable community production pools.</p>
+          </div>
+          <div class="objective-card">
+            <div class="objective-stat">100%</div>
+            <div class="objective-title">Zero-Friction Corporate Reporting Transparency</div>
+            <p>Deliver 100% automated, real-time ESG compliance accounting reports conforming directly to IFRS S2 and California SB 253 standards for every corporate donor platform.</p>
+          </div>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
 
-    <section class="section page-closing" aria-labelledby="partner-h">
-      <div class="container">
-        <h2 id="partner-h" class="visually-strong">If you are a research lab, a funder, or a community organization that shares this vision, we should talk.</h2>
-        <a class="btn btn--primary" href="contact.html">Partner with us</a>
+    <section id="partner" class="partner-cta" aria-labelledby="partner-title">
+      <h2 id="partner-title">Turn corporate compute into verified community impact.</h2>
+      <div class="partner-cta-actions">
+        <a class="btn btn--lg btn--inverse" href="mailto:info@prosfata.com">Partner With the Initiative</a>
       </div>
     </section>
 
   </main>
 
   <footer class="site-footer">
-    <div class="container">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <img src="assets/prosfata-logo-white.png" alt="Prosfata Inc." width="400" height="225">
-          <p>A boutique consulting and community support organization, grounded in the UN Sustainable Development Goals.</p>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="assets/bizskills-logo.svg" alt="BizSkills For Good Inc." width="84" height="84">
+        <div>
+          <div class="footer-brand-name">Inclusivitium<span class="brand-reg-sm">&reg;</span></div>
+          <div class="footer-brand-tag">A flagship social impact initiative of BizSkills For Good Inc. Social Enterprise</div>
         </div>
-        <nav class="footer-nav" aria-label="Footer">
-          <a href="prod-consulting-os.html">ProD Consulting OS&trade;</a>
-          <a href="community.html">Prosfata Community Initiative</a>
-          <a href="contact.html">Contact Us</a>
-          <a href="mailto:info@prosfata.com">info@prosfata.com</a>
-        </nav>
       </div>
-      <div class="footer-bottom">
-        <ul class="footer-ps">
-          <li>People</li>
-          <li>Planet</li>
-          <li>Prosperity</li>
-          <li>Peace</li>
-          <li>Partnership</li>
-        </ul>
-        <p class="footer-copy">&copy; 2026 Prosfata Inc.</p>
+      <div class="footer-note">
+        <div class="footer-note-label">Identity Note</div>
+        <p>Inclusivitium&reg; is a proprietary technology platform and a flagship social impact initiative of BizSkills For Good Inc. Social Enterprise. All rights reserved. All platform interactions maintain strict SOC 2 Type II, COPPA, and FERPA data compliance parameters.</p>
+        <p class="muted">Inclusivitium&reg; is a registered trademark, TMA1195871, Canadian Intellectual Property Office.</p>
       </div>
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
 </body>
 </html>
