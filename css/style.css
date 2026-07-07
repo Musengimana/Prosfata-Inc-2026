@@ -994,6 +994,10 @@ body.nav-open {
   margin: 0;
 }
 
+.footer-social {
+  margin-top: 1.5rem;
+}
+
 .footer-nav {
   display: flex;
   flex-direction: column;

@@ -168,7 +168,7 @@
     .manifesto-body p { margin: 0; }
 
     .compass { padding: 96px 48px; background: var(--neutral-50); }
-    .compass-inner { max-width: 1120px; margin: 0 auto; }
+    .compass-inner { width: 100%; }
     .compass .kicker { text-align: center; color: var(--accent-primary); margin-bottom: 48px; }
     .compass-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 24px; }
     .compass-card {
@@ -203,7 +203,7 @@
     .compass-card--brand p { color: #FFFFFF; }
 
     .five-ps { padding: 112px 48px; background: #FFFFFF; }
-    .five-ps-inner { max-width: 1120px; margin: 0 auto; }
+    .five-ps-inner { width: 100%; }
     .five-ps .kicker { text-align: center; color: var(--accent-primary); margin-bottom: 20px; }
     .five-ps h2 {
       margin: 0 auto;
@@ -258,7 +258,7 @@
     .p-card > p { margin: 0; font-size: 15px; line-height: 1.55; color: var(--text-body); text-wrap: pretty; }
 
     .horizon { padding: 112px 48px; background: var(--purple-deep); color: #FFFFFF; }
-    .horizon-inner { max-width: 1120px; margin: 0 auto; }
+    .horizon-inner { width: 100%; }
     .horizon .kicker { text-align: center; color: var(--orange-spark); margin-bottom: 20px; }
     .horizon h2 {
       margin: 0 auto;
@@ -315,9 +315,22 @@
       border-top: 1px solid var(--border-subtle);
       padding: 64px 48px 48px;
     }
+    .footer-linkedin {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--border-subtle);
+      border-radius: 50%;
+      color: var(--navy-deep);
+      margin-top: 8px;
+      transition: color 150ms ease, border-color 150ms ease;
+    }
+    .footer-linkedin:hover { color: var(--blue-primary); border-color: var(--blue-primary); text-decoration: none; }
+    .footer-linkedin svg { width: 20px; height: 20px; fill: currentColor; }
     .footer-inner {
-      max-width: 1120px;
-      margin: 0 auto;
+      width: 100%;
       display: flex;
       flex-wrap: wrap;
       gap: 40px;
@@ -535,6 +548,9 @@
         <div class="footer-note-label">Identity Note</div>
         <p>Inclusivitium&reg; is a proprietary technology platform and a flagship social impact initiative of BizSkills For Good Inc. Social Enterprise. All rights reserved. All platform interactions maintain strict SOC 2 Type II, COPPA, and FERPA data compliance parameters.</p>
         <p class="muted">Inclusivitium&reg; is a registered trademark, TMA1195871, Canadian Intellectual Property Office.</p>
+        <a class="footer-linkedin" href="https://www.linkedin.com/company/prosfata/" target="_blank" rel="noopener" aria-label="Prosfata Inc. on LinkedIn (opens in a new tab)">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.55C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+        </a>
       </div>
     </div>
   </footer>
