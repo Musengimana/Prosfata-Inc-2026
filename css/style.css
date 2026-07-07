@@ -661,6 +661,39 @@ body.nav-open {
   color: var(--ink);
 }
 
+/* ProD Consulting OS landing */
+
+.prod-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin-bottom: 2.5rem;
+}
+
+.prod-chip {
+  width: clamp(44px, 4vw, 64px);
+  height: clamp(44px, 4vw, 64px);
+  flex: none;
+  border-radius: 22%;
+  box-shadow: 0 0 40px rgba(125, 208, 182, 0.25);
+}
+
+.prod-wordmark {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.3rem, 1rem + 1.2vw, 2.2rem);
+  color: #7DD0B6; /* ProD mint, echoed from prorgdesign.com */
+  letter-spacing: 0.01em;
+}
+
+.prod-hero .proof-grid {
+  margin: 3rem 0 2.5rem;
+}
+
+.prod-ctas {
+  margin-top: 0;
+}
+
 /* Contact */
 
 .contact-hero {
