@@ -101,6 +101,55 @@
     .nav-links { display: flex; align-items: center; gap: 28px; font-size: 14px; font-weight: 500; }
     .nav-links > a:not(.btn) { color: var(--text-body); }
 
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 44px;
+      height: 44px;
+      padding: 0;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+    }
+    .nav-toggle-bar {
+      display: block;
+      width: 24px;
+      height: 2px;
+      margin: 0 auto;
+      background: var(--purple-deep);
+      border-radius: 2px;
+      transition: transform 200ms ease, opacity 200ms ease;
+    }
+    .nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(2) { opacity: 0; }
+    .nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .nav-mobile {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: #FFFFFF;
+      border-bottom: 1px solid var(--border-subtle);
+      box-shadow: 0 12px 28px rgba(14, 35, 79, 0.10);
+      padding: 8px 24px 20px;
+    }
+    .nav-mobile.is-open { display: block; }
+    .nav-mobile ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+    .nav-mobile a:not(.btn) {
+      display: block;
+      padding: 14px 4px;
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--text-body);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .nav-mobile a:not(.btn):hover { text-decoration: none; color: var(--blue-primary); }
+    .nav-mobile .btn { margin-top: 16px; width: 100%; }
+
     .hero {
       background: var(--purple-deep);
       color: #FFFFFF;
@@ -124,7 +173,6 @@
       line-height: 1.1;
       font-weight: 700;
       color: #FFFFFF;
-      text-wrap: balance;
     }
     .hero-sub {
       margin: 32px 0 0;
@@ -133,7 +181,6 @@
       line-height: 1.55;
       font-weight: 300;
       color: var(--base-mist);
-      text-wrap: pretty;
     }
     .hero-ctas { display: flex; gap: 16px; margin-top: 44px; flex-wrap: wrap; justify-content: center; }
 
@@ -354,7 +401,8 @@
     .footer-note p.muted { color: var(--text-muted); }
 
     @media (max-width: 860px) {
-      .nav-links > a:not(.btn) { display: none; }
+      .nav-links { display: none; }
+      .nav-toggle { display: flex; }
     }
     @media (max-width: 720px) {
       .site-nav { padding: 16px 24px; }
@@ -379,6 +427,20 @@
       <a href="#five-ps">The 5 Ps</a>
       <a href="#horizon">Horizon 2035</a>
       <a class="btn btn--sm btn--primary" href="#partner">Partner With Us</a>
+    </nav>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="community-mobile-menu" aria-label="Open menu">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
+    <nav class="nav-mobile" id="community-mobile-menu" aria-label="Mobile">
+      <ul>
+        <li><a href="#manifesto">Manifesto</a></li>
+        <li><a href="#compass">Vision &amp; Mission</a></li>
+        <li><a href="#five-ps">The 5 Ps</a></li>
+        <li><a href="#horizon">Horizon 2035</a></li>
+        <li><a class="btn btn--sm btn--primary" href="#partner">Partner With Us</a></li>
+      </ul>
     </nav>
   </header>
 
@@ -554,6 +616,31 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    (function () {
+      var toggle = document.querySelector('.nav-toggle');
+      var menu = document.getElementById('community-mobile-menu');
+      if (!toggle || !menu) return;
+      function setOpen(open) {
+        toggle.setAttribute('aria-expanded', String(open));
+        toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+        menu.classList.toggle('is-open', open);
+      }
+      toggle.addEventListener('click', function () {
+        setOpen(toggle.getAttribute('aria-expanded') !== 'true');
+      });
+      menu.addEventListener('click', function (e) {
+        if (e.target.closest('a')) setOpen(false);
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') setOpen(false);
+      });
+      window.addEventListener('resize', function () {
+        if (window.innerWidth > 860) setOpen(false);
+      });
+    })();
+  </script>
 
 </body>
 </html>
